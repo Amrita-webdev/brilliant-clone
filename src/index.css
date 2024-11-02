@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.border-opacity-50 {
+  border-color: #CCCCCC; /* #E5E5E5 with 50% opacity */
+}
+
+.border-opacity-100 {
+  border-color: rgb(37, 37, 37); /* #E5E5E5 with 100% opacity */
+}
