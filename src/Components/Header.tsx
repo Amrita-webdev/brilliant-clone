@@ -8,7 +8,7 @@ import {
 } from '../assets/icons';
 import { Link } from 'react-router-dom';
 import useUserData from '../hooks/useUserDetails';
-import { auth } from '../firebase';
+import { auth } from '../firebaseConfig';
 
 const Header: React.FC = () => {
   const { userDetails } = useUserData();

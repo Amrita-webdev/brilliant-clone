@@ -15,7 +15,7 @@ import {
   reset,
 } from '../store/signupSlice';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { auth, db } from '../firebase';
+import { auth, db } from '../firebaseConfig';
 import { doc, setDoc } from 'firebase/firestore';
 import {
   Loader,
