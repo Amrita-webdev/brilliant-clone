@@ -1,6 +1,6 @@
-export interface User {
+export interface UserDetails {
   email: string;
-  name?: string;
+  firstName?: string;
   currentCourse?: Course;
 }
 

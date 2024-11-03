@@ -7,6 +7,7 @@ import {
   ScienceAndEngineeringIcon,
 } from '../assets/icons';
 import Footer from './Footer';
+import { Link } from 'react-router-dom';
 
 const LandingPage: React.FC = () => {
   return (
@@ -25,11 +26,25 @@ const LandingPage: React.FC = () => {
               </p>
               <div>
                 <div>
-                    <svg width="134" height="100%" viewBox="0 0 134 56" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M71.238 56 103.57 0h30.022L101.26 56H71.238ZM.801 56 33.133 0h58.89L59.69 56H.801Z" fill="#fff"></path></svg>
+                  <svg
+                    width="134"
+                    height="100%"
+                    viewBox="0 0 134 56"
+                    preserveAspectRatio="none"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M71.238 56 103.57 0h30.022L101.26 56H71.238ZM.801 56 33.133 0h58.89L59.69 56H.801Z"
+                      fill="#fff"
+                    ></path>
+                  </svg>
                 </div>
-                <button className="w-64 h-16 rounded-full bg-green-500 text-white border-b-4 border-green-600 hover:bg-green-400">
+                <Link to="/signup">
+                  <button className="w-64 h-16 rounded-full bg-green-500 text-white border-b-4 border-green-600 hover:bg-green-400">
                     Get started
-                </button>
+                  </button>
+                </Link>
               </div>
             </div>
           </div>
