@@ -1,50 +1,32 @@
-# React + TypeScript + Vite
+## Setup
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Configure environment variables:
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-});
+```
+VITE_FIREBASE_API_KEY= AIzaSyBYK4kNsP-CdkQbJr7Wx5NMzF1UlHlUNdQ
+VITE_FIREBASE_AUTH_DOMAIN=brilliant-clone-21073.firebaseapp.com
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+4. Start development server: `npm run dev`
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react';
+### Features implemented
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-});
-```
+1. Landing Page
+2. Signup and Login
+3. Dashboard
+4. Courses
+
+### Technical decisions and trade-offs
+
+1. Decision to use custom hook to fetch user details
+2. creating assets directory to store icons and reusable components
+
+### Known limitations
+
+1. Courses page is static
+
+### Time spent
+
+Around 5 hours

@@ -1,4 +1,5 @@
 import React from 'react';
+import { FacebookIcon, GoogleIcon } from './icons';
 
 interface LoaderProps {
   size: string;
@@ -52,7 +53,7 @@ const RecommendedCourseCard: React.FC<RecommendedCourseCardProps> = ({
 }) => {
   return (
     <>
-      <div className="w-40 h-auto rounded-xl border-2 border-b-4 border-slate-200 relative pt-10 px-4 pb-8">
+      <div className="w-40 h-auto rounded-xl border-2 border-b-4 border-slate-200 hover:border-slate-300 cursor-pointer relative pt-10 px-4 pb-8">
         <div className="flex flex-col gap-4 items-center justify-end">
           <img alt={title} src={image} className="w-[102px] h-[102px]" />
           <p className="text-center text-xs text-blue-700 font-bold">{title}</p>
@@ -63,4 +64,26 @@ const RecommendedCourseCard: React.FC<RecommendedCourseCardProps> = ({
   );
 };
 
-export { Loader, CourseCard, RecommendedCourseCard };
+const GoogleAuthButton: React.FC = () => {
+  return (
+    <button className="w-60 h-16 flex items-center justify-center rounded-full bg-white text-white border-2 border-b-4 border-gray-200">
+      <GoogleIcon className="h-6" />
+    </button>
+  );
+};
+
+const FacebookAuthButton: React.FC = () => {
+  return (
+    <button className="w-60 h-16 flex items-center justify-center rounded-full bg-white text-white border-2 border-b-4 border-gray-200">
+      <FacebookIcon className="h-6" />
+    </button>
+  );
+};
+
+export {
+  Loader,
+  CourseCard,
+  RecommendedCourseCard,
+  GoogleAuthButton,
+  FacebookAuthButton,
+};

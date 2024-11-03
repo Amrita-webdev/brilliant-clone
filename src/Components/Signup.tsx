@@ -1,6 +1,6 @@
 // src/components/Login.tsx
 import React, { useState } from 'react';
-import { FacebookIcon, GoogleIcon, SingupImage } from '../assets/icons';
+import { SingupImage } from '../assets/icons';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../store/store';
@@ -17,7 +17,11 @@ import {
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth, db } from '../firebase';
 import { doc, setDoc } from 'firebase/firestore';
-import { Loader } from '../assets/components';
+import {
+  Loader,
+  GoogleAuthButton,
+  FacebookAuthButton,
+} from '../assets/components';
 
 const Signup: React.FC = () => {
   const [showAllDetails, setShowAllDetails] = useState<boolean>(false);
@@ -72,12 +76,8 @@ const Signup: React.FC = () => {
             {!loading ? (
               <>
                 <div className="flex items-center justify-center gap-4">
-                  <button className="w-60 h-16 flex items-center justify-center rounded-full bg-white text-white border-2 border-b-4 border-gray-200">
-                    <GoogleIcon className="h-6" />
-                  </button>
-                  <button className="w-60 h-16 flex items-center justify-center rounded-full bg-white text-white border-2 border-b-4 border-gray-200">
-                    <FacebookIcon className="h-6" />
-                  </button>
+                  <GoogleAuthButton />
+                  <FacebookAuthButton />
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="bg-gray-200 h-0.5 w-48"></div>
@@ -137,7 +137,7 @@ const Signup: React.FC = () => {
                 </button>
               </>
             ) : (
-              <Loader />
+              <Loader size={`w-4 h-4`} />
             )}
             <p className="text-xs text-gray-400">
               By clicking above, I agree to Brilliant's Terms and Privacy Policy

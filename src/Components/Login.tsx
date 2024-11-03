@@ -1,7 +1,7 @@
 // src/components/Login.tsx
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { FacebookIcon, GoogleIcon, SingupImage } from '../assets/icons';
+import { SingupImage } from '../assets/icons';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../firebase';
 import { Link } from 'react-router-dom';
@@ -13,7 +13,11 @@ import {
   setLoading,
   reset,
 } from '../store/loginSlice';
-import { Loader } from '../assets/components';
+import {
+  FacebookAuthButton,
+  GoogleAuthButton,
+  Loader,
+} from '../assets/components';
 
 const Signup: React.FC = () => {
   const dispatch = useDispatch();
@@ -54,12 +58,8 @@ const Signup: React.FC = () => {
             {!loading ? (
               <>
                 <div className="flex items-center justify-center gap-4">
-                  <button className="w-60 h-16 flex items-center justify-center rounded-full bg-white text-white border-2 border-b-4 border-gray-200">
-                    <GoogleIcon className="h-6" />
-                  </button>
-                  <button className="w-60 h-16 flex items-center justify-center rounded-full bg-white text-white border-2 border-b-4 border-gray-200">
-                    <FacebookIcon className="h-6" />
-                  </button>
+                  <GoogleAuthButton />
+                  <FacebookAuthButton />
                 </div>
                 <div className="flex items-center justify-between">
                   <div className="bg-gray-200 h-0.5 w-48"></div>
@@ -88,7 +88,7 @@ const Signup: React.FC = () => {
                 </button>
               </>
             ) : (
-              <Loader size={`w-20 h-20`} />
+              <Loader size={`w-4 h-4`} />
             )}
             <div className="flex items-centerb gap-2">
               <span className="text-gray-500">New User?</span>

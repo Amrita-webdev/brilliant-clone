@@ -23,20 +23,11 @@ const useUserData = () => {
     });
   };
 
-  const handleLogout = async () => {
-    try {
-      await auth.signOut();
-      window.location.href = '/login';
-    } catch (e) {
-      console.log(e);
-    }
-  };
-
   useEffect(() => {
     fetchUserData();
   }, []);
 
-  return { userDetails, handleLogout };
+  return { userDetails };
 };
 
 export default useUserData;

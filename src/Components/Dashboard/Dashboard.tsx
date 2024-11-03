@@ -14,17 +14,17 @@ const Dashboard: React.FC = () => {
       </div>
     );
   }
-  console.log(courses);
+
   return (
     <>
-      <div className="flex flex-col items-center justify-center pt-10">
-        <div className="flex gap-20 justify-around">
+      <div className="flex flex-col items-center justify-center pt-10 bg-gray">
+        <div className="flex gap-20 justify-around ">
           {/* Left */}
           <div className="w-1/3 flex gap-y-4 flex-col">
             <p className="text-xl font-bold pb-2">
               Welcome, {userDetails?.firstName}
             </p>
-            <div className="w-[428px] h-auto rounded-xl border-2 border-gray-300">
+            <div className="w-[428px] h-auto rounded-xl border-2 border-gray-300 bg-[#FFFFFF]">
               <div className="p-[0.75rem]">
                 <div className="flex items-center grow jusitify-between">
                   <span className="font-bold text-5xl">1</span>
